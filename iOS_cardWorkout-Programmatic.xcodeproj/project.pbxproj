@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC7DC34A254F38AC00E809F1 /* RulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DC349254F38AC00E809F1 /* RulesVC.swift */; };
+		BC7DC34C255062F000E809F1 /* cardsDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DC34B255062F000E809F1 /* cardsDeck.swift */; };
 		BCCCA579254D777D0099ADC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCCA578254D777D0099ADC0 /* AppDelegate.swift */; };
 		BCCCA580254D77860099ADC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCCA57F254D77860099ADC0 /* Assets.xcassets */; };
 		BCCCA583254D77860099ADC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCCA581254D77860099ADC0 /* LaunchScreen.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC7DC349254F38AC00E809F1 /* RulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
+		BC7DC34B255062F000E809F1 /* cardsDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardsDeck.swift; sourceTree = "<group>"; };
 		BCCCA575254D777D0099ADC0 /* iOS_cardWorkout-Programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS_cardWorkout-Programmatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCCA578254D777D0099ADC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCCA57F254D77860099ADC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +39,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC7DC34D2550688F00E809F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCCCA58C254D90D40099ADC0 /* CWButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC7DC34E255068A000E809F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC7DC34B255062F000E809F1 /* cardsDeck.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC7DC34F255068AD00E809F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCCCA58A254D7A3C0099ADC0 /* CardSelectionVC.swift */,
+				BC7DC349254F38AC00E809F1 /* RulesVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BCCCA56C254D777D0099ADC0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +87,9 @@
 				BCCCA57F254D77860099ADC0 /* Assets.xcassets */,
 				BCCCA581254D77860099ADC0 /* LaunchScreen.storyboard */,
 				BCCCA584254D77860099ADC0 /* Info.plist */,
-				BCCCA58A254D7A3C0099ADC0 /* CardSelectionVC.swift */,
-				BCCCA58C254D90D40099ADC0 /* CWButton.swift */,
+				BC7DC34F255068AD00E809F1 /* Controller */,
+				BC7DC34E255068A000E809F1 /* Model */,
+				BC7DC34D2550688F00E809F1 /* View */,
 			);
 			path = "iOS_cardWorkout-Programmatic";
 			sourceTree = "<group>";
@@ -134,9 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7DC34A254F38AC00E809F1 /* RulesVC.swift in Sources */,
 				BCCCA579254D777D0099ADC0 /* AppDelegate.swift in Sources */,
 				BCCCA58D254D90D40099ADC0 /* CWButton.swift in Sources */,
 				BCCCA58B254D7A3C0099ADC0 /* CardSelectionVC.swift in Sources */,
+				BC7DC34C255062F000E809F1 /* cardsDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

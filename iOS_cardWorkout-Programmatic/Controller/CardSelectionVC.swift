@@ -10,17 +10,25 @@ import UIKit
 
 class CardSelectionVC: UIViewController {
     
+    var timer: Timer!
+    
     let cardImageView = UIImageView()
     let stopButton = CWButton(backgroundColor: .red, title: "Stop!")
     let rulesButton = CWButton(backgroundColor: .blue, title: "Rules")
     let restartButton = CWButton(backgroundColor: .green, title: "Restart")
-
+    let cards = cardsDeck.allCards
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         configureUI()
+        startTimer()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        timer.invalidate()
     }
     
 
@@ -61,6 +69,8 @@ class CardSelectionVC: UIViewController {
             stopButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stopButton.topAnchor.constraint(equalTo: cardImageView.bottomAnchor, constant: 30)
         ])
+        
+        stopButton.addTarget(self, action: #selector(stopBtnTapped), for: .touchUpInside)
     }
     func configureRestartButton() {
        // add restart button
@@ -73,8 +83,7 @@ class CardSelectionVC: UIViewController {
             restartButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        
-        
+        restartButton.addTarget(self, action: #selector(restartBtnTapped), for: .touchUpInside)
     }
     
     func configureRulesButton() {
@@ -87,8 +96,32 @@ class CardSelectionVC: UIViewController {
             rulesButton.widthAnchor.constraint(equalToConstant: 115),
             rulesButton.heightAnchor.constraint(equalToConstant: 50)
             ])
+        rulesButton.addTarget(self, action: #selector(rulesBtnTapped), for: .touchUpInside)
+    }
+    
+    @objc func rulesBtnTapped(){
+        present(RulesVC(),animated: true)
+    }
+    
+    @objc func stopBtnTapped(){
+        stopTimer()
+    }
+    
+    @objc func restartBtnTapped(){
+        stopTimer()
+        startTimer()
+    }
+    
+     func stopTimer(){
+        timer.invalidate()
+    }
+    
+    func startTimer(){
+        timer = .scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(changeCard), userInfo: nil, repeats: true)
         
     }
     
-    
+    @objc func changeCard(){
+        cardImageView.image = cards.randomElement() ?? UIImage()
+    }
 }
